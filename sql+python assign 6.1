@@ -1,0 +1,187 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "51cf0a57-1151-4bd2-9049-2398aa6ed887",
+   "metadata": {},
+   "source": [
+    "Q1- what is datbase? differentiate betwwen sql and no sql database"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "14f58721-e5a6-49da-953e-50c8290c8226",
+   "metadata": {},
+   "source": [
+    "A database is a structured collection of data that allows for efficient storage, retrieval, and manipulation of information. SQL (Structured Query Language) databases are relational and use a schema to define the data structure. They guarantee ACID properties and are suitable for complex transactions. NoSQL databases, on the other hand, are non-relational and offer flexible, schema-less data models. They excel at handling large-scale, distributed data and provide high availability and horizontal scalability."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b6a8078f-8790-4276-a565-232f41543722",
+   "metadata": {},
+   "source": [
+    "Q2-what is DDL? explain why CREATE, DROP, ALTER, and TURNCATE ARE used with an example."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5126b754-2294-47aa-ba71-20edc316c96e",
+   "metadata": {},
+   "source": [
+    "DDL stands for \"Data Definition Language.\" It is a subset of SQL (Structured Query Language) that focuses on defining and managing database structures and objects. DDL statements are used to create, modify, and delete database objects such as tables, indexes, views, and schemas. Common DDL commands include CREATE, ALTER, and DROP, which respectively create new objects, modify existing ones, and delete objects from the database schema. DDL is essential for defining the logical and physical structure of a database and plays a crucial role in databasE.\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bc58877e-6e1e-4614-ad4c-0c7aaf7f83eb",
+   "metadata": {},
+   "source": [
+    "CREATE TABLE Employees (\n",
+    "    employee_id INT PRIMARY KEY, ## CREATING  a structure on your sql\n",
+    "    first_name VARCHAR(50),\n",
+    "    last_name VARCHAR(50),\n",
+    "    department VARCHAR(50)\n",
+    "    \n",
+    ");\n",
+    "\n",
+    "\n",
+    "DROP TABLE Employees: ## assuming to remove this \n",
+    "ALTER TABLE Employees\n",
+    "Add column email_id VARCHAR(50) # adding more column to sql\n",
+    "\n",
+    "TRUNCATE TABLE Employees; ## reomove aal the data\n",
+    "\n",
+    "\n",
+    "    \n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1dd61af2-e316-4416-881a-6cc2ea2e9e13",
+   "metadata": {},
+   "source": [
+    "Q3- what is DML? Explain ISERT, UPDATE,and DELETE with an example"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b7980f54-686b-4575-bbcf-5d6f1993722f",
+   "metadata": {},
+   "source": [
+    "DML stands for \"Data Manipulation Language.\" It is a subset of SQL (Structured Query Language) that deals with the manipulation and processing of data in a database. DML is primarily used to perform actions such as inserting, updating, deleting, and retrieving data within database tables.\n",
+    "\n",
+    "INSERT INTO TABLE Employees (name, department)\n",
+    "VALUES (\"rohit\", \"sales\")\n",
+    "\n",
+    "UPDATE TABLE Employees\n",
+    "SET department (\"pharma\")\n",
+    "\n",
+    "DELETE  FROM TABLE Employees\n",
+    "WHERE name = \"rohit\"\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3de0a16a-bbba-42ce-8789-8cce2c068c6b",
+   "metadata": {},
+   "source": [
+    "Q4- WHAT IS DQL? Explain select with example"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c8328d75-9adb-471d-923c-6b08a1e17a6e",
+   "metadata": {},
+   "source": [
+    "QL stands for \"Data Query Language.\" It is a subset of SQL (Structured Query Language) used to retrieve data from a database. DQL is primarily concerned with querying and fetching data, rather than defining or modifying the database structure.\n",
+    "\n",
+    "SELECT column1, column2\n",
+    "FROM table_name\n",
+    "WHERE condition;\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "15cbd93b-a854-44b7-b737-56b87d9cb7cb",
+   "metadata": {},
+   "source": [
+    "Primary key and foreign key are two fundamental concepts in relational database management systems. They are used to establish relationships between tables and ensure data integrity. Here's a brief explanation of each:\n",
+    "\n",
+    "Primary Key:\n",
+    "A primary key is a unique identifier for each row (record) in a database table. It ensures that each row can be uniquely identified and accessed. The primary key column must have unique values, and it cannot contain NULL values. There can only be one primary key per table, and it is used as a reference point for related data in other tables.\n",
+    "Foreign Key:\n",
+    "A foreign key is a column or set of columns in a table that refers to the primary key of another table. It establishes a relationship between the two tables, allowing data in one table to refer to data in another table. The foreign key ensures referential integrity, meaning that the values in the foreign key column must match the values in the primary key column of the referenced table or be NULL."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "95c20858-6268-4c0e-860b-765d314ccb26",
+   "metadata": {},
+   "source": [
+    "Q6- WRITE A PYTHON CODE TO CONNECT mysql TO PYTHON. EXPLAIN THE CURSUR() AND EXECUTE METHOD."
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "3ad4e678-af87-464f-bf9c-1d1f00290cd9",
+   "metadata": {},
+   "source": [
+    "import mysql.connector\n",
+    "# import mysql.connector\n",
+    "#create user 'user'@'%' identified by 'password'\n",
+    "mydb = mysql.connector.connect(\n",
+    "  host=\"localhost\",\n",
+    "  user=\"abc\",\n",
+    "  password=\"password\"\n",
+    ")\n",
+    "print(mydb)\n",
+    "mycursor = mydb.cursor()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c5f32eb9-7929-4f84-b15a-7d8aff8e810f",
+   "metadata": {},
+   "source": [
+    "Q7- give the order of excution of SQL clauses in an SQLquery."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "eec20ee8-6f89-45e2-a740-54c997665512",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
